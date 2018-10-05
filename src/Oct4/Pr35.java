@@ -4,6 +4,11 @@ import java.util.Arrays;
 
 /**
  * <p>
+ * <em>This is a version of the
+ * <a href="https://en.wikipedia.org/wiki/Dutch_national_flag_problem">Dutch
+ * National Flag problem</a>
+ * 
+ * <p>
  * This problem was asked by Google.
  * 
  * <p>
