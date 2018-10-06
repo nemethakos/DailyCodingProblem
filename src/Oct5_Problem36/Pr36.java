@@ -6,10 +6,16 @@ import java.util.logging.Logger;
 import datatypes.Node;
 
 /**
- * This problem was asked by Dropbox.
- * 
- * Given the root to a binary search tree, find the second largest node in the
+ * <p>
+ * <b>Problem:</b>Given the root to a binary search tree, find the second largest node in the
  * tree.
+ * <p>
+ * <b>Note:</b> The "official" solution is to do a reverse in-order traversal
+ * and count the number of nodes processed. When the second node is processed,
+ * it is the result.
+ * <p>
+ * <b>Possible official Java solution:</b><a href=
+ * "https://www.geeksforgeeks.org/second-largest-element-in-binary-search-tree-bst/">https://www.geeksforgeeks.org/second-largest-element-in-binary-search-tree-bst/</a>
  */
 public class Pr36 {
 
