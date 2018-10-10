@@ -1,4 +1,4 @@
-package Oct8_Problem40;
+package Oct9_Problem40;
 
 import org.apache.commons.lang3.StringUtils;
 
@@ -68,21 +68,21 @@ public class Pr40 {
 			 * The bits in "singlyBits" and "doublyBits" which are appears third time in the
 			 * array are set to 1 in both variable
 			 */
-			int bitsThatAppearThirdTime = singlyBits & doublyBits;
+			int threelyBits = singlyBits & doublyBits;
 			System.out
-					.println("bitsThatAppearThirdTime = singlyBits & doublyBits:\t" + bin(bitsThatAppearThirdTime));
+					.println("threelyBits = singlyBits & doublyBits:\t\t\t" + bin(threelyBits));
 
 			/**
 			 * remove bits that appear the third time from "singlyBits"
 			 */
-			singlyBits = singlyBits & ~bitsThatAppearThirdTime;
-			System.out.println("singlyBits = singlyBits & ~bitsThatAppearThirdTime:\t" + bin(singlyBits));
+			singlyBits = singlyBits & ~threelyBits;
+			System.out.println("singlyBits = singlyBits & ~threelyBits:\t\t\t" + bin(singlyBits));
 
 			/**
 			 * remove bits that appear the third time from "doublyBits"
 			 */
-			doublyBits = doublyBits & ~bitsThatAppearThirdTime;
-			System.out.println("doublyBits = doublyBits & ~bitsThatAppearThirdTime:\t" + bin(doublyBits));
+			doublyBits = doublyBits & ~threelyBits;
+			System.out.println("doublyBits = doublyBits & ~threelyBits:\t\t\t" + bin(doublyBits));
 
 		}
 		System.out.println("------------------------------------------------");
