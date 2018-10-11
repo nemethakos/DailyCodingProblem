@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * <p>
@@ -28,6 +29,8 @@ import java.util.List;
  * However, the first one is lexicographically smaller.
  */
 public class Pr41 {
+
+	private static final Logger LOG = Logger.getLogger(Pr41.class.getName());
 
 	private static Pair getFlight(HashMap<String, List<Pair>> flightLegMap, String origin) {
 		Pair result = null;
@@ -59,18 +62,21 @@ public class Pr41 {
 			}
 			flightLegMap.get(pair.getOrigin()).add(pair);
 		}
-		// sort each entry in the map alphabetically by origin
+		// sort each entry in the map lexicographically by origin
 		flightLegMap.keySet().forEach(origin -> {
 			flightLegMap.get(origin).sort((p1, p2) -> p1.getOrigin().compareTo(p2.getOrigin()));
-			// System.out.println(origin + ":" + flightLegMap.get(origin));
+
+			LOG.info("Sorted flights for: " + origin + ": " + flightLegMap.get(origin));
 		});
 
 		// get the first flight
 		var flight = getFlight(flightLegMap, startingAirport);
 		var prevFlight = flight;
-		// remove flights from the map in lexiographic order
+		// remove flights from the map in lexicographic order
 		while (flight != null) {
-			// System.out.println(flight);
+
+			LOG.info("Current flight: " + flight.toString());
+
 			result.add(flight.getOrigin());
 			prevFlight = flight;
 			flight = getFlight(flightLegMap, flight.getDestination());
@@ -93,8 +99,7 @@ public class Pr41 {
 		List<String> itinerary = getItinerary(flights, startingAirport);
 		if (itinerary != null) {
 			System.out.println("Itinerary: " + itinerary);
-		}
-		else {
+		} else {
 			System.out.println("No itinerary exists!");
 		}
 		System.out.println();
