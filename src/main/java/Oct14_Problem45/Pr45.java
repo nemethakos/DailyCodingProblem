@@ -4,6 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * <p>
+ * This problem was asked by Two Sigma.
+ * 
+ * <p>
+ * Using a function rand5() that returns an integer from 1 to 5 (inclusive) with
+ * uniform probability, implement a function rand7() that returns an integer
+ * from 1 to 7 (inclusive).
+ */
 public class Pr45 {
 
 	@FunctionalInterface
@@ -12,7 +21,7 @@ public class Pr45 {
 	}
 
 	public static int rand5() {
-		return (int) (Math.random() * 6);
+		return (int) (Math.random() * 5) + 1;
 	}
 
 	public static int rand7() {
@@ -20,7 +29,7 @@ public class Pr45 {
 		for (var i = 0; i < 7; i++) {
 			result += rand5();
 		}
-		return result % 7;
+		return result % 7 + 1;
 	}
 
 	public static void main(String[] args) {
@@ -43,6 +52,7 @@ public class Pr45 {
 				System.out.println(i);
 			}
 		}
+		System.out.println(map);
 
 		var sum = map.keySet().stream().collect(Collectors.summarizingInt(key -> map.get(key))).getSum();
 		System.out.println(
