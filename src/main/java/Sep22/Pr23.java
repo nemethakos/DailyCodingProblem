@@ -8,6 +8,7 @@ import static Sep22.Move.*;
 
 public class Pr23 {
 
+	@SuppressWarnings("unused")
 	private static String[] map1 = { //
 			" |   |   |", //
 			" | | | | |", //
@@ -55,6 +56,7 @@ public class Pr23 {
 
 		Collections.sort(validPaths, new Comparator<Path>() {
 
+			@SuppressWarnings("unused")
 			@Override
 			public int compare(Path o1, Path o2) {
 				var d1 = o1.getLast().distanceFrom(goal);

@@ -42,6 +42,7 @@ public class Pr21 {
 
 	}
 
+	@SuppressWarnings("unused")
 	private static void printArray(int[][] overlaps) {
 		for (int i = 0; i < overlaps.length; i++) {
 			for (int j = 0; j < overlaps[0].length; j++) {

@@ -87,27 +87,28 @@ public class App {
 					sum += numberOfWaysTheMessageCanBeDecoded(subtriplet);
 				}
 
-				
 				System.out.println("'" + subMessage + "'<-" + sum);
 				variants.put(subMessage, sum);
 				return sum;
 			}
 		}
 		printTriplet(triplet, result);
-		//System.out.println("***" + triplet.getStringList() + "=" + result);
+		// System.out.println("***" + triplet.getStringList() + "=" + result);
 		return result;
 	}
-	
+
+	@SuppressWarnings("unused")
 	private void printTriplet(Triplet triplet, int numvariants) {
-		for (var word: triplet.getStringList()) {Integer numVariants = variants.get(word);
-			if (word.length()==0) {
-				word="0";
-				numVariants=1;
+		for (var word : triplet.getStringList()) {
+			Integer numVariants = variants.get(word);
+			if (word.length() == 0) {
+				word = "0";
+				numVariants = 1;
 			}
-			
+
 			System.out.print(word + "/");
 		}
-		System.out.println(" = "+numvariants);
+		System.out.println(" = " + numvariants);
 	}
 
 	public int numberOfWaysTheMessageCanBeDecoded(String message) {

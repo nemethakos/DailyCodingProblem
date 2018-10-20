@@ -17,6 +17,7 @@ public class Pr19 {
 	private HouseList optimal = null;
 
 	// house, color
+	@SuppressWarnings("unused")
 	private static int cost[][] = //
 			{ //
 					{ 1, 2, 3, 4, 5 }, //
