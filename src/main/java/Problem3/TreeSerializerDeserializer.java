@@ -1,0 +1,47 @@
+package Problem3;
+
+/**
+ * Given the root to a binary tree, 
+ * implement serialize(root), 
+ * which serializes the tree into a string, 
+ * and deserialize(s), which deserializes the string back into the tree.
+ *
+ * For example, given the following Node class
+ * 
+ * class Node:
+ *   def __init__(self, val, left=None, right=None):
+ *       self.val = val
+ *       self.left = left
+ *       self.right = right
+ * The following test should pass:
+ *
+ * node = Node('root', Node('left', Node('left.left')), Node('right'))
+ * assert deserialize(serialize(node)).left.left.val == 'left.left'
+ */
+public class TreeSerializerDeserializer {
+	
+	public static void main(String... args) {
+		
+		
+		Node node = Node.of("root", 
+				             Node.of("left", 
+				            		 Node.of("left.left")
+				            		 ), 
+				             Node.of("right"));
+		
+		String serializedNode = node.serialize();
+		System.out.println("SERIALIZED:"+serializedNode);
+		var deserialized = Node.deserialize(serializedNode);
+		
+		boolean testOK = deserialized.getLeft().getLeft().getValue().equals("left.left");
+		if (testOK) {
+			System.out.println("Deserialization OK");
+		}
+		
+		System.out.println("DESERIALIZED:"+deserialized.serialize());
+		
+		
+		
+	}
+
+}
