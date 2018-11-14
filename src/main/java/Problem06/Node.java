@@ -1,4 +1,4 @@
-package Problem6;
+package Problem06;
 
 public class Node {
 

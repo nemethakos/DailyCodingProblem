@@ -1,4 +1,4 @@
-package Problem2;
+package Problem02;
 
 /**
  * Given an array of integers, return a new array such that each element at

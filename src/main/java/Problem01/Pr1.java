@@ -1,4 +1,4 @@
-package Problem1;
+package Problem01;
 
 /**
  * This problem was recently asked by Google.

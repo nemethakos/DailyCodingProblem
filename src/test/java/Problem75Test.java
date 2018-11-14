@@ -2,6 +2,8 @@ import java.util.Arrays;
 
 import org.junit.jupiter.api.Test;
 
+import Problem75.Problem75;
+
 class Problem75Test {
 
 	@Test

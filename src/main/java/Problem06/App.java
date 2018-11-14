@@ -1,4 +1,4 @@
-package Problem6;
+package Problem06;
 
 /**
  * An XOR linked list is a more memory efficient doubly linked list. Instead of

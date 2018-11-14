@@ -1,4 +1,4 @@
-package Problem4;
+package Problem04;
 
 /**
  * This problem was asked by Stripe.
