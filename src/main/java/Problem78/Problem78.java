@@ -1,6 +1,5 @@
 package Problem78;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -79,9 +78,7 @@ public class Problem78 {
 				var list2 = sortedLists.remove(0);
 
 				Node<T> mergedLists = mergeTwoLists(list1, list2, compare);
-				
-				//System.out.println("MergedLists: " + mergedLists);
-				
+
 				sortedLists.add(mergedLists);
 			}
 
@@ -112,6 +109,7 @@ public class Problem78 {
 				var node1 = list1;
 				list1 = list1.next;
 				resultTail = appendOne(node1, resultTail);
+			// list2.value < list1.value
 			} else {
 				var node2 = list2;
 				list2 = list2.next;
@@ -125,6 +123,7 @@ public class Problem78 {
 			resultTail = append(list1, resultTail);
 		}
 
+		// do not include dummy head
 		return resultHead.next;
 	}
 
@@ -137,7 +136,7 @@ public class Problem78 {
 	private static <T> Node<T> appendOne(Node<T> node, Node<T> tail) {
 		node.next = null;
 		tail.next = node;
-		
+
 		return node;
 	}
 
