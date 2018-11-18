@@ -12,28 +12,33 @@ package Problem79;
  */
 public class Problem79 {
 
-	/**
-	 * Returns true, if the array can be modified to become non decreasing
-	 * 
-	 * @param arr the array
-	 * @return true, if the array can be modified to become non decreasing, false
-	 *         otherwise
-	 */
-	public static boolean couldBecomeNonDecreasing(int... arr) {
+	public static boolean check(int... arr) {
+		var count = 0;
+		for (var i = 0; i < arr.length - 1; i++) {
+			if (arr[i] > arr[i + 1]) {
+				if (count > 0) {
+					return false;
+				} else if (
+				// corner case: [i-1]=5, [i]=6, [i+1]=4, [i+2]=5		
+				// previous(i-1, may not exists) <- (low[i], high[i+1]) -> next(i+2, may not exists) 
+				// the pair and the previous and next elements
 
-		// null array or 0 or 1 element array counts as already non decreasing
-		if (arr == null || arr.length < 2) {
-			return true;
-		}
+				// index check
+				i - 1 > 0 && // low's previous element is in the array
+				i + 2 < arr.length && // high's next element is in the array
 
-		var counter = 0;
-		for (var i = 1; i < arr.length; i++) {
-			if (arr[i - 1] > arr[i]) {
-				counter++;
+				// value check
+				arr[i] > arr[i + 2] && // low is higher than high's next
+				arr[i + 1] < arr[i - 1]) // high is less than low's previous
+					
+				{
+					return false;
+				}
+				count++;
 			}
 		}
-
-		return counter <= 1;
+		return true;
 	}
 
+	
 }
