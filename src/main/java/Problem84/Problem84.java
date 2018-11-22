@@ -89,14 +89,16 @@ public class Problem84 {
 	 * <p>
 	 * Returns the {@link Set} of {@link Set} of {@link Point}s (Set of Islands).
 	 * <p>
-	 * Only the <b>N</b>-North and <b>W</b>-West position is checked if it is an adjoining land
-	 * (no diagonal cells (X) are checked)
+	 * Only the <b>N</b>-North and <b>W</b>-West position is checked if it is an
+	 * adjoining land (no diagonal cells (X) are checked)
+	 * 
 	 * <pre>
 	 * X N X
 	 * W 1 X
 	 * </pre>
 	 * <p>
-	 * Time complexity: O(n), n = number of land cells.
+	 * Time complexity: O(rows*columns), where rows = number of rows in the matrix,
+	 * columns = number of columns in the matrix
 	 * <p>
 	 * Space complexity: O(n+i), n = number of land cells, i = number of islands
 	 * 
