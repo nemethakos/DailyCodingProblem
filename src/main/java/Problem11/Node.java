@@ -25,12 +25,12 @@ public class Node {
 	}
 
 	public void toString(Node node, StringBuilder sb, int level, String word) {
-		if (node.isTerminal()) {
-			sb.append(getNSpaces(level, " ") + "[" + word + "]\r\n");
-		}
+
 
 		if (node != null) {
-
+			if (node.isTerminal()) {
+				sb.append(getNSpaces(level, " ") + "[" + word + "]\r\n");
+			}
 			Character[] i = node.getMap().keySet().toArray(new Character[0]);
 
 			for (Character c : i) {

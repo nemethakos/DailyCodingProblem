@@ -81,7 +81,7 @@ public class Pr23 {
 		// System.out.println("" + currentPath.getLast() + ", goal: " + goal);
 
 		if (currentPath.getLast().equals(goal)) {
-			minSteps = currentPath.size();
+			//minSteps = currentPath.size();
 			//System.out.println("Found: " + currentPath + ", minSteps: " + minSteps);
 			return currentPath;
 		}
@@ -99,7 +99,7 @@ public class Pr23 {
 			var foundPath = getPath(map, goal, move, minSteps);
 			if (foundPath != null) {
 				best = foundPath;
-				minSteps = foundPath.size();
+				//minSteps = foundPath.size();
 				return foundPath;
 			}
 		}
