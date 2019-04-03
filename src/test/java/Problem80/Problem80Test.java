@@ -2,8 +2,6 @@ package Problem80;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 import data.binarytree.BinaryTree;
 import data.binarytree.BinaryTreeNode;
 

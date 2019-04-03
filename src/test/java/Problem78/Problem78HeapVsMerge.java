@@ -6,7 +6,8 @@ public class Problem78HeapVsMerge {
 	static final int LENGTH_OF_LIST = 1000;
 	private static final int NUMBER_OF_LISTS = 1000;
 
-	@Test
+	@SuppressWarnings("unused")
+    @Test
 	void testMerge() {
 
 		var lists = Util.getLists(NUMBER_OF_LISTS, LENGTH_OF_LIST);
